@@ -29,3 +29,4 @@
 * Now your local master will be current, but not your development branch or your github master
 * Still in your master branch, git add, git commit, git commit.  This will get your github master current with the project master.
 * At this point I would push your development branch to github and then go to github and create a pull request to your github master.  Resolve any conflicts and now you can continue developing.
+
