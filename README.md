@@ -8,3 +8,6 @@
   * python3 manage.py migrate
 * Start the server:
   * python3 manage.py runserver
+
+
+***Daniel edited read.me***
