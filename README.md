@@ -15,3 +15,5 @@
 * After that create a pull request from your master branch to my test branch
 * Send me a text and I will accept your pull request and if the app still works, I will create a pull request from test to master and accept it
 * Then I will send a message out, so everyone can pull from the master(git pull upstream master)
+
+***Daniel edited read.me***
