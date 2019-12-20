@@ -1,0 +1,21 @@
+body {
+  /* width: 100%;
+  heith: 100%; */
+  background-image: url(./img/hsh_home_Background.png);
+  background-size: cover; 
+  /* background-attachment: fixed */
+ 
+}
+
+nav{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%,
+   rgba(36,241,18,0.8757878151260504) 30%, 
+   rgba(11,158,19,1) 100%, 
+   rgba(0,212,255,1) 100%);
+}
+
+#nav-logo{
+  height: 120px;
+  width: 120px;
+}

@@ -1,45 +1,26 @@
 from django.db import models
-from datetime import date
+from django.urls import reverse
+from datetime import datetime
 from django.contrib.auth.models import User
 
 # Create your models here.
+class Company(models.Model):
+  tax_id = models.IntegerField()
+  name = models.CharField(max_length=200)
+  address = models.CharField(max_length=200)
+  email = models.EmailField()
+  phone = models.CharField(max_length=200)
 
-# class Company(models.Model):
-#   tax_id = models.IntegerField()
-#   name = models.CharField(max_length=200)
-#   address = models.CharField(max_length=200)
-#   email = models.EmailField()
-#   phone = models.CharField(max_length=200)
+class Profile(models.Model):
+  user = models.OneToOneField(User, on_delete=models.CASCADE)
+  is_agent = models.BooleanField(default=False)
 
+# class User_pref(models.Model):
+#   user = models.OneToOneField(
+#     User,
+#     on_delete=models.CASCADE,
+#     )
 
-# class Properties(models.Model):
-#   beds = models.IntegerField()
-#   baths = models.IntegerField()
-#   price = models.IntegerField()
-#   sqft = models.IntegerField()
-#   levels = models.IntegerField()
-#   location = models.CharField(max_length=200)
-#   date_listed = models.DateField(default=date.today())
-#   status = models.CharField(max_length=100)
-#   agent = models.ForeignKey(Agents, on_delete=models.CASCADE)
-
-# class Agents(models.Model):
-#   license = models.IntegerField()
-#   clients = models.ForeignKey(Customer, on_delete=models.CASCADE)
-
-# class Users(models.Model):
-#   name = models.CharField(max_length=200)
-#   address = models.CharField(max_length=200)
-#   email = models.EmailField()
-#   phone = models.CharField(max_length=200)
-#   user_class = models.CharField(max_length=100)
-#   password = models.CharField(max_length=100)
-
-# class Client(models.Model):
-#   client_pref = models.ForeignKey(Client_pref, on_delete=models.CASCADE)
-#   client_fav = models.ManyToManyField(Properties, on_delete=models.CASCADE)
-
-# class Client_pref(models.Model):
 #   beds = models.IntegerField()
 #   min_baths = models.IntegerField()
 #   max_baths = models.IntegerField()
@@ -51,4 +32,27 @@ from django.contrib.auth.models import User
 #   location = models.CharField(max_length=200)
 #   school_rating = models.CharField(max_length=100)
 
+class Property(models.Model):
+  street_address = models.CharField(max_length=200)
+  city = models.CharField(max_length=100)
+  state = models.CharField(max_length=100)
+  beds = models.IntegerField()
+  baths = models.IntegerField()
+  price = models.IntegerField()
+  sqft = models.IntegerField()
+  levels = models.IntegerField()
+  date_listed = models.DateField(default=datetime.now)
+  status = models.CharField(max_length=100)
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"{self.street_address}"
+
+  def get_absolute_url(self):
+      return reverse("detail", kwargs={"property_id": self.id})
+
+
+# class User_fav(models.Model):
+#   user = models.ForeignKey(User, on_delete=models.CASCADE)
+#   user_fav = models.ForeignKey(Property, on_delete=models.CASCADE)
 
