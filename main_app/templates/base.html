@@ -37,12 +37,20 @@
             </div>
         </nav>
     </header>
-    <main class="container">
-            {% block content %}
-            {% endblock %}
-        </main>
-        <footer class="page-footer">
-            <div class="right">All Rights Reserved, 2019 Home-Sweet-Home </div>
-        </footer>
+  
+
+    <div id="page-container">
+        <div class="content-body">
+            <main class="container">
+                {% block content %}
+                {% endblock %}
+            </main>
+        </div>
+        <div id="content-wrap">
+            <!-- all other page content -->
+        </div>
+            <footer id="footer">All Rights Reserved, 2019 Home-Sweet-Home</footer>
+        </div>
+   
     </body>
     </html>
