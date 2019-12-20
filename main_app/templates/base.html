@@ -15,7 +15,12 @@
                 </ul>
                 <ul class="right">
                     <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    {% else %}
+                        <li><a href="{% url 'signup' %}">Sign UP</a></li>
+                        <li><a href="{% url 'login' %}">Log In</a></li>
+                    {% endif %}
                     <li><a href="/">LINK3</a></li>
                 </ul>
             </div>
