@@ -39,7 +39,7 @@ def properties_detail(request, property_id):
   property = Property.objects.get(id=property_id)
   
   return render(request, 'properties/detail.html', { 
-    'property': property ,
+    'property': property
   })
 
 class PropertyCreate(LoginRequiredMixin, CreateView):

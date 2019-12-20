@@ -44,6 +44,9 @@ class Property(models.Model):
   status = models.CharField(max_length=100)
   user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+  def __str__(self):
+    return f"{self.street_address}"
+
   def get_absolute_url(self):
       return reverse("detail", kwargs={"property_id": self.id})
 
