@@ -12,8 +12,12 @@
         <p>Style: {{ proprty.levels }}</p>
         <p>Color: {{ proprty.beds }}</p>
           <div class="card-action">
-            <a href="{% url 'proprtiess_update' property.id %}">Edit</a>
-            <a href="{% url 'propertiess_delete' property.id %}">Delete</a> {% endcomment %}
+        {% endcomment %}
+          <div class="card-action">
+            <a class="btn" href="{% url 'properties_update' property.id %}">Edit</a>
+            <a class="btn" href="{% url 'properties_delete' property.id %}">Delete</a>
+          </div>
+            {% comment %} <a href="{% url 'propertiess_delete' property.id %}">Delete</a> {% endcomment %}
           </div>
       </div>
 </div>
