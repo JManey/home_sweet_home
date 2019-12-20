@@ -24,6 +24,8 @@
                 <ul class="right">
                     <li><a href="{% url 'about' %}">About</a></li>
                     {% if user.is_authenticated %}
+                        <li><a href="{% url 'properties_create' %}">Create Property</a></li>
+                        <li><a href="{% url 'index' %}">Properties</a></li>
                         <li><a href="{% url 'logout' %}">Log Out</a></li>
                     {% else %}
                         <li><a href="{% url 'signup' %}">Sign UP</a></li>

@@ -3,8 +3,9 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-
-from .models import Profile, Company
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import Profile, Company, Property
 
 
 # Create your views here.
@@ -29,3 +30,28 @@ def signup(request):
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
+
+def properties_index(request):
+  properties = Property.objects.all()
+  return render(request, 'properties/index.html', {'properties': properties})
+
+def properties_detail(request, property_id):
+  property = Property.objects.get(id=property_id)
+  
+  return render(request, 'properties/detail.html', { 
+    'property': property ,
+  })
+
+class PropertyCreate(LoginRequiredMixin, CreateView):
+  model = Property
+  fields = ['street_address', 'city', 'state', 'beds', 'baths', 'price', 'sqft', 'levels', 'date_listed', 'status']
+
+  def form_valid(self, form):
+    # assign the logged in user self.request.user
+    form.instance.user = self.request.user
+    # let the createView do its usual task
+    return super().form_valid(form)
+
+class PropertyUpdate(LoginRequiredMixin, UpdateView):
+  model = Property
+  fields = '__all__'

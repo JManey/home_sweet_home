@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Property List</h1>
+<hr />
+
+{% for property in properties %}
+  <div class="card">
+    <a href="{% url 'detail' property.street_address %}">
+      <div class="card-content">
+        <span class="card-title">{{ property.city }} {{ property.state }}</span>
+      </div>
+    </a>
+  </div>
+{% endfor %}
+
+{% endblock %}

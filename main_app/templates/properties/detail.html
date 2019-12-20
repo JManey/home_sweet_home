@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Property Details</h1>
+
+<hr>
+
+<div class="card">
+  <div class="card-content">
+        <span class="card-title">{{ proprty.street_address }} {{ proprty.price }}</span>
+        <p>Year: {{ proprty.date_listed }}</p>
+        <p>Style: {{ proprty.levels }}</p>
+        <p>Color: {{ proprty.beds }}</p>
+          <div class="card-action">
+            <a href="{% url 'proprtiess_update' property.id %}">Edit</a>
+            <a href="{% url 'propertiess_delete' property.id %}">Delete</a>
+          </div>
+      </div>
+</div>
+
+
+{% endblock %}
