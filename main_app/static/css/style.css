@@ -1,52 +1,21 @@
 body {
-  display: flex;
-  background-color: rgb(7, 74, 106);
-  color: #039be5;
-  min-height: 100vh;
-  flex-direction: column;
+  /* width: 100%;
+  heith: 100%; */
+  background-image: url(./img/hsh_home_Background.png);
+  background-size: cover; 
+  /* background-attachment: fixed */
+ 
 }
 
-h1 {
-  box-shadow: 35px 35px 15px 30px rgba(#0a172e);
-  text-align: center;
+nav{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%,
+   rgba(36,241,18,0.8757878151260504) 30%, 
+   rgba(11,158,19,1) 100%, 
+   rgba(0,212,255,1) 100%);
 }
 
-main {
-  flex: 1 0 auto;
-}
-
-footer.page-footer {
-  padding-top: 0;
-  text-align: right;
-}
-
-.card {
-  background-color: rgba(25, 26, 26, 0.947);
-  box-shadow: 15px 10px 2px 2px rgba(35, 41, 58, 0.5);
-  border-radius: 15px 15px 15px 15px;
-  color: #039be5;
-
-}
-
-.nav-wrapper, .page-footer {
-  background-color: black;
-  color: white;
-}
-
-hr {
-  border-color: #039be5;
-}
-
-.navbar-fixed a {
-  font-size: 1.5em;
-}
-
-label, input {
-  color: #039be5;
-}
-
-.btn {
-  background-color: rgb(7, 74, 106);
-  color: #039be5;
-  margin-bottom: 10px;
+#nav-logo{
+  height: 100px;
+  width: 100px;
 }
