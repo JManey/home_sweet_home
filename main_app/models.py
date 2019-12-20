@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from datetime import datetime
 from django.contrib.auth.models import User
 
@@ -30,16 +31,24 @@ class Profile(models.Model):
 #   location = models.CharField(max_length=200)
 #   school_rating = models.CharField(max_length=100)
 
-# class Property(models.Model):
-#   beds = models.IntegerField()
-#   baths = models.IntegerField()
-#   price = models.IntegerField()
-#   sqft = models.IntegerField()
-#   levels = models.IntegerField()
-#   location = models.CharField(max_length=200)
-#   date_listed = models.DateField(default=datetime.now)
-#   status = models.CharField(max_length=100)
-#   agent = models.ForeignKey(User, on_delete=models.CASCADE)
+class Property(models.Model):
+  street_address = models.CharField(max_length=200)
+  city = models.CharField(max_length=100)
+  state = models.CharField(max_length=100)
+  beds = models.IntegerField()
+  baths = models.IntegerField()
+  price = models.IntegerField()
+  sqft = models.IntegerField()
+  levels = models.IntegerField()
+  date_listed = models.DateField(default=datetime.now)
+  status = models.CharField(max_length=100)
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"{self.street_address}"
+
+  def get_absolute_url(self):
+      return reverse("detail", kwargs={"property_id": self.id})
 
 # class User_fav(models.Model):
 #   user = models.ForeignKey(User, on_delete=models.CASCADE)
