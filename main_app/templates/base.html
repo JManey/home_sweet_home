@@ -10,6 +10,8 @@
     <link rel="icon" href="{% static 'css/img/hsh_logo.png' %}">
     <!-- Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- aditional fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <!-- Compiled and minified JavaScript -->
@@ -18,13 +20,15 @@
     <title>/HsH\</title>
 </head>
 <body>
-    <header class="navbar-fixed">
+    <header>
         <nav>
             <div class="nav-wrapper">
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul>
                     <li><a href="/" class="brand-logo center"><img id="nav-logo" src="{% static 'css/img/hsh_logo.png' %}"></a></li>
                 </ul>
-                <ul id="nav-mobile" class="left hide-on-med-and-down">
+               
+                <ul class="left hide-on-med-and-down">
                     <li><a href="{% url 'about' %}">About</a></li>
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'properties_create' %}">Create Property</a></li>
@@ -38,6 +42,19 @@
                 </ul>
             </div>
         </nav>
+ 
+          <ul class="sidenav" id="mobile-demo">
+            <li><a href="{% url 'about' %}">About</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'properties_create' %}">Create Property</a></li>
+            <li><a href="{% url 'index' %}">Properties</a></li>
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
+            {% else %}
+            <li><a href="{% url 'signup' %}">Sign UP</a></li>
+            <li><a href="{% url 'login' %}">Log In</a></li>
+            {% endif %}
+            <li class="right"><a href="/">LINK3</class="right" a></li>
+          </ul>
     </header>
   
 
@@ -53,6 +70,11 @@
         </div>
             <footer id="footer">All Rights Reserved, 2019 Home-Sweet-Home</footer>
         </div>
-   
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+           var elems = document.querySelectorAll('.sidenav');
+           var instances = M.Sidenav.init(elems);
+           });
+      </script>
     </body>
     </html>
