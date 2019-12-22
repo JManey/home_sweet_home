@@ -49,12 +49,14 @@ nav, footer{
 }
 
 .sign-form{
- 
   border-radius: 10%;
   text-align: center;
   padding-top: 0;
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(110,242,98,0.4836849369085173) 0%, rgba(11,158,19,0.7202779968454258) 100%, rgba(0,212,255,1) 100%);
+}
+.sign-in-size{
+  width: 250px;
 }
 
 #space-botton{
