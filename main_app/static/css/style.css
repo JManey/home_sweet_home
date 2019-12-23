@@ -51,6 +51,8 @@ nav, footer{
   background-color: #D0D0D0;
 }
 
+
+
 /* about form  */
 /* ************************************** */
 
@@ -65,13 +67,16 @@ nav, footer{
 /* sign in form  */
 /* ************************************** */
 .sign-form{
-  width: 250px;
   border-radius: 10%;
   text-align: center;
   padding-top: 0;
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(110,242,98,0.4836849369085173) 0%, rgba(11,158,19,0.7202779968454258) 100%, rgba(0,212,255,1) 100%);
   margin-bottom: 100px;
+}
+
+.sign-in-size{
+  width: 250px;
 }
 
 .sign-in-container{
@@ -88,7 +93,7 @@ h1{
 }
 
 /* imput text from login */
-#id_username, #id_password{
+#id_username, #id_password,#id_password1, #id_password2{
   padding: 0;
   margin: 0 0 10px 0;
   height: 30px;
@@ -109,9 +114,19 @@ p, .container{
   padding: 0;
 }
 
-#btnColor{
+.btnColor{
   background-color: green;
 }
 
 /* ***************************************** */
 /* end login form */
+
+.sign-up-size{
+  width: 600px;
+}
+
+.sign-up-container{
+  padding:0 0 20px 0;
+  width: 500px;
+  margin: auto;
+}
