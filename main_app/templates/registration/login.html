@@ -1,18 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Log In</h1>
+
 <!-- Add the login form -->
 <div class="sign-form sign-in-size">
-  <form method="post" action="{% url 'login' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" class="btn" value="login">
-    <input type="hidden" name="next" value="{{ next }}">
-  </form>
+  <h1>Log In</h1>
+  <div class="sign-in-container">
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" class="btn btnColor" value="login">
+      <input type="hidden" name="next" value="{{ next }}">
+    </form>
+  </div>
 </div>
-<div id="space-botton">
 
-</div>
 
 {% endblock %}
