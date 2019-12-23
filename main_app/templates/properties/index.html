@@ -3,7 +3,7 @@
 
 <h1>Property List</h1>
 <hr>
-
+{% if properties %}
 {% for property in properties %}
   <div class="card">
     <div class="card-title">{{property.street_address}}</div>
@@ -15,5 +15,8 @@
       <a href="{% url 'detail' property.id %}">Details</a>
   </div>
 {% endfor %}
+{% else %}
+  <h3>Please Add Some Properties</h3>
+{% endif %}
 
 {% endblock %}
