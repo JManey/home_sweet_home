@@ -1,4 +1,9 @@
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   background-image: url(./img/hsh_home_Background.png);
@@ -129,4 +134,16 @@ p, .container{
   padding:0 0 20px 0;
   width: 500px;
   margin: auto;
+}
+
+.center-align{
+  padding:0;
+  width: 500px;
+  margin: auto;
+}
+
+/* **************** */
+#test2{
+  widows: 800px;
+  height: 400px;
 }
