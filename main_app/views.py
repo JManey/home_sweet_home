@@ -56,8 +56,17 @@ def properties_detail(request, property_id):
 
 
 
+
+
 def agents_index(request):
-  return render(request, 'agents/agents_index.html')
+  #users => profile => is_agent
+  agents = Profile
+  return render(request, 'agents/agents_index.html', {'agents': agents})
+
+
+
+
+
 
 
 
