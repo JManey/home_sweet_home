@@ -54,4 +54,8 @@ class PropertyCreate(LoginRequiredMixin, CreateView):
 
 class PropertyUpdate(LoginRequiredMixin, UpdateView):
   model = Property
-  fields = '__all__'
+  fields = ['street_address', 'city', 'state', 'beds', 'baths', 'price', 'sqft', 'levels', 'date_listed', 'status']
+
+class PropertyDelete(LoginRequiredMixin, DeleteView):
+  model = Property
+  success_url = '/properties/'
