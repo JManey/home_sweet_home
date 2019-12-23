@@ -1,8 +1,11 @@
+
+
 body {
   background-image: url(./img/hsh_home_Background.png);
   background-size: cover; 
   background-repeat: no-repeat;
- 
+  margin: 0;
+  padding: 0;
 }
 
 nav, footer{
@@ -48,23 +51,57 @@ nav, footer{
   background-color: #D0D0D0;
 }
 
+
+/* sign in form  */
+/* ************************************** */
 .sign-form{
+  width: 250px;
   border-radius: 10%;
   text-align: center;
   padding-top: 0;
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(110,242,98,0.4836849369085173) 0%, rgba(11,158,19,0.7202779968454258) 100%, rgba(0,212,255,1) 100%);
-}
-.sign-in-size{
-  width: 250px;
+  margin-bottom: 100px;
 }
 
-#space-botton{
-  height: 100px;
-  width: 100px;
+.sign-in-container{
+  padding:0 0 20px 0;
+  width: 160px;
+  margin: auto;
 }
 
 h1{
+  color: green;
   text-align: center;
+  font-size: 2rem;
+  margin: 40px 0 0 0;
 }
 
+/* imput text from login */
+#id_username, #id_password{
+  padding: 0;
+  margin: 0 0 10px 0;
+  height: 30px;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%,
+   rgba(43,194,30,0.4836849369085173) 0%,
+    rgba(4,117,10,0.7202779968454258) 100%, 
+    rgba(13,207,188,1) 100%, rgba(0,212,255,1) 100%);
+}
+
+label{
+  color: green;
+  font-size: 1.5rem;
+}
+
+p, .container{
+  margin: 0;
+  padding: 0;
+}
+
+#btnColor{
+  background-color: green;
+}
+
+/* ***************************************** */
+/* end login form */
