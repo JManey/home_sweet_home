@@ -1,19 +1,4 @@
 {% extends 'base.html' %}
-<<<<<<< HEAD
-
-{% block content %}
-    <h1>Sign Up</h1>
-{% if error_message %}
-    <p class="red-text">
-        {{ error_message }}
-    </p>
-{% endif %}
-    <form method="post" action="{% url 'signup' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" class="btn" value="signup">
-    </form>
-=======
 {% block content %}
 
 
@@ -23,7 +8,7 @@
   {% if error_message %}<p class="red-text">{{ error_message}}</p>{% endif %}
   <div class="sign-up-container">
     <form method="post" action="{% url 'signup' %}">
-    
+
       {% csrf_token %}
       {{ form.as_p }}
       <input type="submit" class="btn btnColor" value="signup">
@@ -33,5 +18,4 @@
 
 <div id="space-botton"></div>
 
->>>>>>> master
 {% endblock %}
