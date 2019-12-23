@@ -11,9 +11,11 @@ class Company(models.Model):
   email = models.EmailField()
   phone = models.CharField(max_length=200)
 
+
 class Profile(models.Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE)
   is_agent = models.BooleanField(default=False)
+
 
 # class User_pref(models.Model):
 #   user = models.OneToOneField(

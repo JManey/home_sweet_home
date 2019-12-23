@@ -49,33 +49,11 @@ def properties_detail(request, property_id):
 #below doesn't work on class based
 # @user_passes_test(is_agent_check, login_url='/login/')
 
-
-
-
-
-
-
-
-
-
+#AGENTS VIEWS
 def agents_index(request):
-  #users => profile => is_agent
-  #Profiles.is_agents
   agents = User.objects.all()
+  # agents = User.objects.filter()
   return render(request, 'agents/agents_index.html', {'agents': agents})
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 class PropertyCreate(UserPassesTestMixin, CreateView):
