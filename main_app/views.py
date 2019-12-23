@@ -50,6 +50,24 @@ def properties_detail(request, property_id):
 # @user_passes_test(is_agent_check, login_url='/login/')
 
 
+
+
+
+
+
+
+def agents_index(request):
+  return render(request, 'agents/agents_index.html')
+
+
+
+
+
+
+
+
+
+
 class PropertyCreate(UserPassesTestMixin, CreateView):
   def test_func(self):
     return self.request.user.profile.is_agent
