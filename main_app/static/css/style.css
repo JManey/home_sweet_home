@@ -51,6 +51,16 @@ nav, footer{
   background-color: #D0D0D0;
 }
 
+/* about form  */
+/* ************************************** */
+
+.content-container{
+  margin: 0 auto;
+  width: 500px;
+  margin-bottom: 300px;
+}
+/* ************************************** */
+/* about form  */
 
 /* sign in form  */
 /* ************************************** */
