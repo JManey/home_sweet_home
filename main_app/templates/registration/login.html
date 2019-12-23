@@ -9,7 +9,7 @@
     <form method="post" action="{% url 'login' %}">
       {% csrf_token %}
       {{ form.as_p }}
-      <input id="btnColor" type="submit" class="btn" value="login">
+      <input type="submit" class="btn btnColor" value="login">
       <input type="hidden" name="next" value="{{ next }}">
     </form>
   </div>
