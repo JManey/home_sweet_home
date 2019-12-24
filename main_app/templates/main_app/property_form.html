@@ -7,6 +7,7 @@
     <h1>Add Property</h1>
   {% endif %}
   <!-- Leaving the action empty makes the form post to the same url used to display it -->
+  <div class="card">
   <form action="" method="post">
     <!-- Django requires the following for security purposes -->
     {% csrf_token %}
@@ -16,4 +17,5 @@
     </table>
     <input type="submit" value="Submit" class="btn">
   </form>
+  </div>
 {% endblock %}
