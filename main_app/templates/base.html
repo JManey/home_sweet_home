@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">  
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Tab Icon -->
     <link rel="icon" href="{% static 'css/img/hsh_logo.png' %}">
@@ -15,7 +15,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <!-- Compiled and minified JavaScript -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>   
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <title>/HsH\</title>
 </head>
@@ -27,10 +27,10 @@
                 <ul>
                     <li><a href="/" class="brand-logo center"><img id="nav-logo" src="{% static 'css/img/hsh_logo.png' %}"></a></li>
                 </ul>
-               
+
                 <ul class="left hide-on-med-and-down">
                     <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="/agents">Agents</a></li>
+                    <li><a href="{% url 'agents_index' %}">Agents</a></li>
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'properties_create' %}">Create Property</a></li>
                         <li><a href="{% url 'index' %}">Properties</a></li>
@@ -39,11 +39,10 @@
                         <li><a href="{% url 'signup' %}">Sign UP</a></li>
                         <li><a href="{% url 'login' %}">Log In</a></li>
                     {% endif %}
-                    <li><a href="/">LINK3</a></li>
                 </ul>
             </div>
         </nav>
- 
+
           <ul class="sidenav" id="mobile-demo">
             <li><a href="{% url 'about' %}">About</a></li>
             {% if user.is_authenticated %}
@@ -57,7 +56,7 @@
             <li class="right"><a href="/">LINK3</a></li>
           </ul>
     </header>
-  
+
 
     <div id="page-container">
         <div class="content-body">

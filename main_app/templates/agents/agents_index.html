@@ -1,12 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+
     <h1>AGENTS:</h1>
+
     {% for agent in agents %}
         <ul>
             <li>
-                {{ agent.profile.user }}
+                <a>{{ agent.profile.user }}</a>
             </li>
         </ul>
     {% endfor %}
+
+
+
+
+
+
+
 {% endblock %}
