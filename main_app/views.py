@@ -4,6 +4,7 @@ from django.views.generic import ListView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .models import Profile, Company, Property
 
@@ -41,13 +42,18 @@ def properties_index(request):
 
 def properties_detail(request, property_id):
   property = Property.objects.get(id=property_id)
-  
-  return render(request, 'properties/detail.html', { 
+  return render(request, 'properties/detail.html', {
     'property': property
   })
 
 #below doesn't work on class based
 # @user_passes_test(is_agent_check, login_url='/login/')
+
+#AGENTS VIEWS
+def agents_index(request):
+  agents = User.objects.all()
+  # agents = User.objects.filter()
+  return render(request, 'agents/agents_index.html', {'agents': agents})
 
 
 class PropertyCreate(UserPassesTestMixin, CreateView):

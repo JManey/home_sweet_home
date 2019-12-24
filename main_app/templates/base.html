@@ -30,6 +30,7 @@
                
                 <ul class="left hide-on-med-and-down">
                     <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="/agents">Agents</a></li>
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'properties_create' %}">Create Property</a></li>
                         <li><a href="{% url 'index' %}">Properties</a></li>
