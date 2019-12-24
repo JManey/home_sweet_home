@@ -10,6 +10,7 @@
       <h1>Add Property</h1>
     {% endif %}
     <form action="" method="post">
+      <input type="hidden" name="csrfmiddlewaretoken" value="FFBBNE7Hm8Zel2U8jFWzG6xwFbTUSCpYFDX9jW0Ae419Dqwb8yN0ypNCCprbGDcB">
       <div class="fieldWrapper"> 
         {{ form.street_address.errors }}
         <label for="{{ form.id_street_address }}">Street Address:</label>
