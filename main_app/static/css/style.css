@@ -1,4 +1,9 @@
 
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
 
 body {
   background-image: url(./img/hsh_home_Background.png);
@@ -89,11 +94,13 @@ h1{
   color: green;
   text-align: center;
   font-size: 2rem;
-  margin: 40px 0 0 0;
+  margin: 0 0 10px 0;
 }
 
 /* imput text from login */
-#id_username, #id_password,#id_password1, #id_password2{
+#id_username, #id_password,#id_password1, #id_password2,
+#id_city, #id_state, #id_beds, #id_baths, #id_street_address,
+#id_price, #id_sqft, #id_levels, #id_date_listed,#id_status{
   padding: 0;
   margin: 0 0 10px 0;
   height: 30px;
@@ -130,3 +137,34 @@ p, .container{
   width: 500px;
   margin: auto;
 }
+
+.center-align{
+  padding:0;
+  width: 500px;
+  margin: auto;
+}
+
+/* **************** */
+
+.card{
+  width: 150%;
+  margin: 30px 20px 40px 0;
+  text-align: center;
+}
+#content_property{
+  display: flex;
+}
+
+#id_city, #id_state, #id_beds, #id_baths, #id_status,
+#id_price, #id_sqft, #id_levels, #id_date_listed{
+  width: 100px;
+}
+
+#id_street_address{
+  width: 180px;
+}
+
+div .btnColor{
+  margin: 10px 0 20px 0;
+}
+
