@@ -8,7 +8,7 @@
     {% for agent in agents %}
         <ul>
             <li>
-                <a>{{ agent.user }}</a>
+                {{ agent.user.get_full_name}}
             </li>
         </ul>
     {% endfor %}
