@@ -11,8 +11,7 @@
     {% endif %}
     <form action="" method="post">
       {% csrf_token %}
-      {% comment %} <input type="hidden" name="csrfmiddlewaretoken" value="FFBBNE7Hm8Zel2U8jFWzG6xwFbTUSCpYFDX9jW0Ae419Dqwb8yN0ypNCCprbGDcB">
-      <div class="fieldWrapper">  {% endcomment %}
+      <div class="fieldWrapper">
         {{ form.street_address.errors }}
         <label for="{{ form.id_street_address }}">Street Address:</label>
         {{ form.street_address }}
