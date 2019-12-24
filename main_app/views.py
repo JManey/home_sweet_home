@@ -68,10 +68,14 @@ class PropertyCreate(UserPassesTestMixin, CreateView):
     # let the createView do its usual task
     return super().form_valid(form)
 
-class PropertyUpdate(LoginRequiredMixin, UpdateView):
+class PropertyUpdate(UserPassesTestMixin, UpdateView):
+  def test_func(self):
+    return self.request.user.profile.is_agent
   model = Property
   fields = ['street_address', 'city', 'state', 'beds', 'baths', 'price', 'sqft', 'levels', 'date_listed', 'status']
 
-class PropertyDelete(LoginRequiredMixin, DeleteView):
+class PropertyDelete(UserPassesTestMixin, DeleteView):
+  def test_func(self):
+    return self.request.user.profile.is_agent
   model = Property
   success_url = '/properties/'
