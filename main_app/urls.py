@@ -13,4 +13,6 @@ urlpatterns = [
   path('properties/<int:pk>/delete/', views.PropertyDelete.as_view(), name='properties_delete'),
   #AGENTS ROUTE
   path('agents/', views.agents_index, name='agents_index'),
+  #Agents Details
+  path('agents/details/', views.agents_details, name='agents_details'),
   ]
