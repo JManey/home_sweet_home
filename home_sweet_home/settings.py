@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'home_sweet_home.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hsh',
+        'NAME': 'hshtest',
     }
 }
 
