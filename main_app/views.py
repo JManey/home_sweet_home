@@ -51,14 +51,11 @@ def properties_detail(request, property_id):
 #below doesn't work on class based
 # @user_passes_test(is_agent_check, login_url='/login/')
 
-
-#AGENTS LIST
 def agents_index(request):
   # agents = User.objects.all()
   agents = Profile.objects.filter(is_agent=True)
   return render(request, 'agents/agents_index.html', {'agents': agents})
 
-#AGENT SHOW PAGE
 def agents_details(request):
   agent = Profile.objects.get(id=agent_id)
   return render(request, 'agents/agents_details.html', { 'agent': agent })
@@ -91,5 +88,3 @@ def CitySearch(request):
   query = request.GET.get('q')
   properties = Property.objects.all().filter(city__icontains=query)
   return render(request, 'properties/index.html', {'properties': properties})
-  
-  
