@@ -3,13 +3,13 @@
 {% block content %}
     
     <div class="row center-align">
-        <form>
-        <label for="site-search">Search for your future home:</label>
+        <form action="{% url 'search_prop' %" method="get">
+        <label for="prop_search">Search for your future home:</label>
       
-        <input type="search" id="site-search" name="q"
-               aria-label="Search through site content">
+        <input type="search" id="prop_search" name="input"
+               aria-label="Search Available Properties">
         
-        <button>Search</button>
+        <button type="submit" placeholder="Search">Search</button>
     </form>
     </div>
 {% endblock %}
