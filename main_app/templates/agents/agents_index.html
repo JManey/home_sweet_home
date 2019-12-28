@@ -2,7 +2,6 @@
 {% block content %}
     <h1>AGENTS:</h1>
     {% for agent in agents %}
-    <!-- <a href="{% url 'detail' agent.id %}"></a> -->
         <ul>
             <hr>
             <li>Name: <a>{{ agent.user.get_full_name}}</a></li>
