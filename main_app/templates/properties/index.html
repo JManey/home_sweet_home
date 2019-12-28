@@ -2,6 +2,34 @@
 
 {% block content %}
 
+    <h1 id="prop-title">Filter By</h1>
+    <hr>
+        <div class="card sign-form row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s6">
+                <input placeholder="City" id="city" type="text" class="validate">
+                <label for="first_name">City</label>
+              </div>
+              <div class="input-field col s6">
+                <input placeholder="City" id="state" type="text" class="validate">
+                <label for="state">State</label>
+              </div>
+              <div class="input-field col s6">
+                <input placeholder="beds" id="beds" type="number" class="validate">
+                <label for="beds">Beds</label>
+              </div>
+              <div class="input-field col s6">
+                <input placeholder="baths" id="baths" type="number" class="validate">
+                <label for="baths">Baths</label>
+              </div>
+            </div>
+          </form>
+        </div>
+
+
+
+    {% comment %} <hr> {% endcomment %}
     <h1 id="prop-title">Property List</h1>
     <hr>
     <div id="card-position">
