@@ -11,7 +11,6 @@
             <div class="card">
                 <div class="prop-picture"></div>
                 <div class="card-title">{{ agent.user.get_full_name}}</div>
-                <div class="card-content" id="price">Joined: {{ agent.user.date_joined}}</div>
                 <a href="{% url 'agents_details' agent.id %}">More about this agent...</a>
             </div>
           </li>
