@@ -44,7 +44,6 @@
         </nav>
 
           <ul class="sidenav" id="mobile-demo">
-            <li><a href="{% url 'about' %}">About</a></li>
             {% if user.is_authenticated %}
             <li><a href="{% url 'properties_create' %}">Create Property</a></li>
             <li><a href="{% url 'index' %}">Properties</a></li>
@@ -53,7 +52,6 @@
             <li><a href="{% url 'signup' %}">Sign UP</a></li>
             <li><a href="{% url 'login' %}">Log In</a></li>
             {% endif %}
-            <li class="right"><a href="/">LINK3</a></li>
           </ul>
     </header>
 
@@ -68,7 +66,10 @@
         <div id="content-wrap">
             <!-- all other page content -->
         </div>
-            <footer id="footer">All Rights Reserved, 2019 Home-Sweet-Home</footer>
+            <footer id="footer">
+              <a class="left" href="{% url 'about' %}">About</a>
+            <div>All Rights Reserved, 2019 Home-Sweet-Home</div>
+            </footer>
         </div>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
