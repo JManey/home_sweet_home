@@ -41,8 +41,47 @@ def signup(request):
 
 # filterable index
 def properties_index(request):
-  properties = Property.objects.all()
-  return render(request, 'properties/index.html', {'properties': properties})
+  qs = Property.objects.all()
+  city = request.GET.get('city')
+  state = request.GET.get('state')
+  beds = request.GET.get('beds')
+  baths = request.GET.get('baths')
+  min_price = request.GET.get('min_price')
+  max_price = request.GET.get('max_price')
+  min_sqft = request.GET.get('min_sqft')
+  max_sqft = request.GET.get('max_sqft')
+  levels = request.GET.get('levels')
+  status = request.GET.get('status')
+
+  if city != '' and city is not None:
+    qs = qs.filter(city__icontains=city)
+  if state != '' and state is not None:
+    qs = qs.filter(state__icontains=state)
+  if beds != '' and beds is not None:
+    qs = qs.filter(beds__icontains=beds)
+  if baths != '' and baths is not None:
+    qs = qs.filter(baths__icontains=baths)
+  if min_price != '' and min_price is not None:
+    qs = qs.filter(price__gte=min_price)
+  if max_price != '' and max_price is not None:
+    qs = qs.filter(price__lte=max_price)
+  if min_sqft != '' and min_sqft is not None:
+    qs = qs.filter(sqft__gte=min_sqft)
+  if max_sqft != '' and max_sqft is not None:
+    qs = qs.filter(sqft__lte=max_sqft)
+  if levels != '' and levels is not None:
+    qs = qs.filter(levels=levels)
+  if status != '' and status is not None:
+    qs = qs.filter(status=status)
+
+
+
+  context = {
+      'qs': qs
+  }
+  print(context)
+  
+  return render(request, 'properties/index.html', context)
 
 
 
