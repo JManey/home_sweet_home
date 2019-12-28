@@ -49,6 +49,7 @@ nav, footer{
 
 .content-body{
   align-self: center;
+  
 }
 
 #site-search{
@@ -145,26 +146,85 @@ p, .container{
 }
 
 /* **************** */
-
+.border{
+  border: 2px solid green;
+  margin: 15px;
+  /* width: 80%; */
+}
 .card{
-  width: 150%;
+  width: 100%;
   margin: 30px 20px 40px 0;
   text-align: center;
 }
 #content_property{
   display: flex;
 }
-
-#id_city, #id_state, #id_beds, #id_baths, #id_status,
-#id_price, #id_sqft, #id_levels, #id_date_listed{
+#id_beds, #id_baths, #id_levels{
+  width: 30px;
+}
+#id_sqft{
+  width: 65px;
+}
+#id_city, #id_state, #id_status,
+#id_price, #id_date_listed{
   width: 100px;
 }
-
+#size-form{
+  width: 650px;
+}
 #id_street_address{
-  width: 180px;
+  width: 260px;
+  margin: 10px;
 }
 
+#form-prop-size{
+width: 570px;
+}
 div .btnColor{
   margin: 10px 0 20px 0;
 }
+
+/* Properties */
+#prop-title{
+  margin-top: 80px;
+}
+.li-card .card{
+
+  width: 270px;
+}
+ #card-position ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  /* width: 1200px; */
+}
+
+#card-position ul li {
+  list-style: none;
+  margin: 0 auto;
+  justify-content:space-evenly;
+  flex: 0 0 30%;
+  /* padding: 15px; */
+}
+
+#price,#beds, #state{
+  padding: 0;
+}
+
+#price{
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.prop-picture{
+  height: 200px;
+  width: 270px;
+  background-color: green;
+}
+
+main.container{
+  margin: 0 auto;
+  width: 80%;
+}
+
 
