@@ -11,19 +11,24 @@
     {% endif %}
     <form action="" method="post">
       {% csrf_token %}
-      <div class="fieldWrapper">
-        {{ form.street_address.errors }}
-        <label for="{{ form.id_street_address }}">Street Address:</label>
-        {{ form.street_address }}
-    
-        {{ form.city.errors }}
-        <label for="{{ form.id_city }}">City:</label>
-        {{ form.city }}
-    
-        {{ form.state.errors }}
-        <label for="{{ form.id_state }}">State:</label>
-        {{ form.state }}
-      </div>
+     <div id="form-prop-size"></div>
+      <div class="border">
+        <div class="fieldWrapper">
+          {{ form.street_address.errors }}
+          <label for="{{ form.id_street_address }}">Street Address:</label>
+          {{ form.street_address }}
+        </div>
+        <div class="fieldWrapper">
+          {{ form.city.errors }}
+          <label for="{{ form.id_city }}">City:</label>
+          {{ form.city }}
+      
+          {{ form.state.errors }}
+          <label for="{{ form.id_state }}">State:</label>
+          {{ form.state }}
+        </div>
+    </div>
+    <div class="border">
       <div class="fieldWrapper movingClass">
           {{ form.id_beds.errors }}
           <label for="{{ form.id_beds }}">Beds:</label>
@@ -32,31 +37,36 @@
           {{ form.baths.errors }}
           <label for="{{ form.id_baths }}">Baths:</label>
           {{ form.baths }}
+
+          {{ form.levels.errors }}
+          <label for="{{ form.id_levels  }}">Levels :</label>
+          {{ form.levels  }}
         
           {{ form.sqft.errors }}
           <label for="{{ form.id_sqft }}">Sqft:</label>
           {{ form.sqft }}
-
-          {{ form.status.errors }}
-          <label for="{{ form.id_status }}">Status:</label>
-          {{ form.status }}
       </div>
+    </div>
+    <div class="border">
       <div class="fieldWrapper movingClass">
+        {{ form.status.errors }}
+        <label for="{{ form.id_status }}">Status:</label>
+        {{ form.status }}
+
           {{ form.price.errors }}
           <label for="{{ form.id_price }}">Price:</label>
           {{ form.price }}
-      
-          {{ form.levels.errors }}
-          <label for="{{ form.id_levels  }}">Levels :</label>
-          {{ form.levels  }}
-  
-          {{ form.date_listed.errors }}
-          <label for="{{ form.id_date_listed  }}">Date Listed :</label>
-          {{ form.date_listed  }}
       </div>
+      <div class="fieldWrapper movingClass">
+        {{ form.date_listed.errors }}
+        <label for="{{ form.id_date_listed  }}">Date Listed :</label>
+        {{ form.date_listed  }}
+      </div>
+    </div>
       <div>  
         <input type="submit" value="Submit" class="btn btnColor">
       </div>
+   
     </form>
   </div>
 
