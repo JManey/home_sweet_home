@@ -1,19 +1,73 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  {% if object %}
-    <h1>Edit <span class="teal-text">{{object.address}}</span></h1>
-  {% else %}
-    <h1>Add Property</h1>
-  {% endif %}
+
   <!-- Leaving the action empty makes the form post to the same url used to display it -->
-  <form action="" method="post">
-    <!-- Django requires the following for security purposes -->
-    {% csrf_token %}
-    <table>
-      <!-- Render the inputs inside of <tr>s & <td>s -->
-      {{ form.as_table }}
-    </table>
-    <input type="submit" value="Submit" class="btn">
-  </form>
-{% endblock %}
+  <div class="card sign-form">
+    {% if object %}
+    <h1>Edit <span class="teal-text">{{object.address}}</span></h1>
+    {% else %}
+      <h1>Add Property</h1>
+    {% endif %}
+    <form action="" method="post">
+      {% csrf_token %}
+     <div id="form-prop-size"></div>
+      <div class="border">
+        <div class="fieldWrapper">
+          {{ form.street_address.errors }}
+          <label for="{{ form.id_street_address }}">Street Address:</label>
+          {{ form.street_address }}
+        </div>
+        <div class="fieldWrapper">
+          {{ form.city.errors }}
+          <label for="{{ form.id_city }}">City:</label>
+          {{ form.city }}
+      
+          {{ form.state.errors }}
+          <label for="{{ form.id_state }}">State:</label>
+          {{ form.state }}
+        </div>
+    </div>
+    <div class="border">
+      <div class="fieldWrapper movingClass">
+          {{ form.id_beds.errors }}
+          <label for="{{ form.id_beds }}">Beds:</label>
+          {{ form.beds }}
+      
+          {{ form.baths.errors }}
+          <label for="{{ form.id_baths }}">Baths:</label>
+          {{ form.baths }}
+
+          {{ form.levels.errors }}
+          <label for="{{ form.id_levels  }}">Levels :</label>
+          {{ form.levels  }}
+        
+          {{ form.sqft.errors }}
+          <label for="{{ form.id_sqft }}">Sqft:</label>
+          {{ form.sqft }}
+      </div>
+    </div>
+    <div class="border">
+      <div class="fieldWrapper movingClass">
+        {{ form.status.errors }}
+        <label for="{{ form.id_status }}">Status:</label>
+        {{ form.status }}
+
+          {{ form.price.errors }}
+          <label for="{{ form.id_price }}">Price:</label>
+          {{ form.price }}
+      </div>
+      <div class="fieldWrapper movingClass">
+        {{ form.date_listed.errors }}
+        <label for="{{ form.id_date_listed  }}">Date Listed :</label>
+        {{ form.date_listed  }}
+      </div>
+    </div>
+      <div>  
+        <input type="submit" value="Submit" class="btn btnColor">
+      </div>
+   
+    </form>
+  </div>
+
+<!-- {% endblock %} -->

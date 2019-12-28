@@ -15,11 +15,13 @@ class Profile(models.Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE)
   is_agent = models.BooleanField(default=False)
 
+
 # class User_pref(models.Model):
 #   user = models.OneToOneField(
 #     User,
 #     on_delete=models.CASCADE,
 #     )
+
 #   beds = models.IntegerField()
 #   min_baths = models.IntegerField()
 #   max_baths = models.IntegerField()
@@ -49,6 +51,7 @@ class Property(models.Model):
 
   def get_absolute_url(self):
       return reverse("detail", kwargs={"property_id": self.id})
+
 
 # class User_fav(models.Model):
 #   user = models.ForeignKey(User, on_delete=models.CASCADE)
