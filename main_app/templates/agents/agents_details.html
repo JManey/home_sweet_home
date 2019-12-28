@@ -2,6 +2,7 @@
 
 {% block content %}
     <h1>TEST SHOW PAGE</h1>
+    <!-- <a href="{% url 'detail' agent.id %}"></a> -->
     {% for agent in agents %}
         <ul>
             <li>Name: <a>{{ request.user.get_full_name}}</a></li>
