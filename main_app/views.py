@@ -6,6 +6,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+import operator
+from django.db.models import Q
 from .models import Profile, Company, Property
 
 
@@ -46,10 +48,6 @@ def properties_detail(request, property_id):
     'property': property
   })
 
-#below doesn't work on class based
-# @user_passes_test(is_agent_check, login_url='/login/')
-
-
 
 
 
@@ -61,9 +59,6 @@ def agents_index(request):
 #AGENT SHOW PAGE
 def agents_details(request):
   return render(request, 'agents/agents_details.html')
-
-
-
 
 
 
@@ -90,3 +85,10 @@ class PropertyDelete(UserPassesTestMixin, DeleteView):
     return self.request.user.profile.is_agent
   model = Property
   success_url = '/properties/'
+
+def CitySearch(request):
+  query = request.GET.get('q')
+  properties = Property.objects.all().filter(city__icontains=query)
+  return render(request, 'properties/index.html', {'properties': properties})
+  
+  
