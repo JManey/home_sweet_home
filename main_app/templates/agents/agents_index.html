@@ -1,22 +1,14 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
-
     <h1>AGENTS:</h1>
-
     {% for agent in agents %}
+    <!-- <a href="{% url 'detail' agent.id %}"></a> -->
         <ul>
-            <li>
-                {{ agent.user.get_full_name}}
-            </li>
+            <hr>
+            <li>Name: <a>{{ agent.user.get_full_name}}</a></li>
+            <li>Admin?: {{ agent.user.is_superuser}}</li>
+            <li>Joined: {{ agent.user.date_joined}}</li>
         </ul>
     {% endfor %}
-
-
-
-
-
-
-
+    <hr>
 {% endblock %}
