@@ -44,6 +44,8 @@
         </nav>
 
           <ul class="sidenav" id="mobile-demo">
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'agents_index' %}">Agents</a></li>
             {% if user.is_authenticated %}
             <li><a href="{% url 'properties_create' %}">Create Property</a></li>
             <li><a href="{% url 'index' %}">Properties</a></li>
