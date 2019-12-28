@@ -26,6 +26,16 @@ nav, footer{
   width: 120px;
 }
 
+/* navbar mobile */
+#mobile-demo{
+  height: 300px;
+  margin-top: 56px;
+  background: rgb(2,0,36);
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(43,194,30,0.4836849369085173) 0%, rgba(4,117,10,0.7202779968454258) 100%, rgba(13,207,188,1) 100%, rgba(0,212,255,1) 100%);
+}
+#mobile-demo a{
+  color: white;
+}
 
 #page-container {
   position: relative;
