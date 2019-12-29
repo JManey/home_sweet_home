@@ -1,63 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <div id="prop-search">
+      <h1 id="prop-title">Filter By</h1>
+      <hr>
+      <form class="test">
+        <input placeholder="City" id="city" name="city" type="text" class="validate">
+        <input placeholder="State" id="state" name="state" type="text" class="validate">
+        <input placeholder="Beds" id="beds" name="beds"  type="number" class="validate">
+        <input placeholder="Baths" id="baths" name="baths" type="number" step=".5" class="validate">
+        <input placeholder="Min Price" id="min_price" name="min_price" type="number" class="validate">
+        <input placeholder="Max Price" id="max_price" name="max_price" type="number" class="validate">
+        <input placeholder="Min Sqft" id="min_sqft" name="min_sqft" type="number" class="validate">
+        <input placeholder="Max Sqft" id="max_sqft" name="max_sqft" type="number" class="validate">
+        <input placeholder="Levels" id="levels" name="levels" type="number" class="validate">
+        <input placeholder="Status" id="status" name="status" type="text" class="validate">
 
-    <h1 id="prop-title">Filter By</h1>
-    <hr>
-        <div class="card sign-form row">
-          <form class="col s12">
-            <div class="row">
-              <div class="input-field col s6">
-                <input placeholder="City" id="city" name="city" type="text" class="validate">
-                <label for="first_name">City</label>
-              </div>
-              <div class="input-field col s6">
-                <input placeholder="State" id="state" name="state" type="text" class="validate">
-                <label for="state">State</label>
-              </div>
-              <div class="input-field col s6">
-                <input placeholder="beds" id="beds" name="beds"  type="number" class="validate">
-                <label for="beds">Beds</label>
-              </div>
-              <div class="input-field col s6">
-                <input placeholder="baths" id="baths" name="baths" type="number" step=".5" class="validate">
-                <label for="baths">Baths</label>
-              </div>
-              <div class="input-field col s6">
-                <input placeholder="min_price" id="min_price" name="min_price" type="number" class="validate">
-                <label for="min_price">Min Price</label>
-              </div>
-              <div class="input-field col s6">
-                <input placeholder="max_price" id="max_price" name="max_price" type="number" class="validate">
-                <label for="max_price">Max Price</label>
-              </div>
-              <div class="input-field col s6">
-                <input placeholder="min_sqft" id="min_sqft" name="min_sqft" type="number" class="validate">
-                <label for="min_sqft">Min Sqft</label>
-              </div>
-              <div class="input-field col s6">
-                <input placeholder="max_sqft" id="max_sqft" name="max_sqft" type="number" class="validate">
-                <label for="max_sqft">Max Sqft</label>
-              </div>
-              <div class="input-field col s6">
-                <input placeholder="levels" id="levels" name="levels" type="number" class="validate">
-                <label for="levels">Floors</label>
-              </div>
-              <div class="input-field col s6">
-                <input placeholder="status" id="status" name="status" type="text" class="validate">
-                <label for="status">Status</label>
-              </div>
-            </div>
-            <div>  
-              <input type="submit" value="Submit" class="btn btnColor">
-            </div>
-          </form>
+        <div>  
+          <input type="submit" value="Submit" class="btn btnColor c">
         </div>
-
-
+      </form>
+    </div>
 
     {% comment %} <hr> {% endcomment %}
-    <h1 id="prop-title">Property List</h1>
+    <h1 id="h1-prop-title">Property List</h1>
     <hr>
     <div id="card-position">
     {% if qs %}
@@ -68,7 +34,7 @@
               <div class="prop-picture"></div>
               <div class="card-title">{{property.street_address}}</div>
                 <div class="card-content" id="price">Price: ${{property.price}}</div>
-                <div class="card-content" id="beds">Beds: {{property.beds}} / Baths: {{property.baths}}</div>
+                <div class="card-content" id="beds">Beds: {{property.beds}} / Baths: {{property.baths}} / Levels: {{property.levels}}</div>
                 <div class="card-content" id="state">State: {{property.state}} / City: {{property.city}}</div>
                 <a href="{% url 'detail' property.id %}">Details</a>
             </div>
