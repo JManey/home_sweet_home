@@ -6,7 +6,7 @@
         <form action="{% url 'city_results' %}" method="get">
         <label for="prop_search">Search for your future home:</label>
       
-        <input type="search" id="prop_search" name="q" value="{{request.GET.q}}" placeholder="Search By City"
+        <input type="search" id="prop_search" name="city" value="{{request.GET.q}}" placeholder="Search By City"
                aria-label="Search Available Properties">
         
         <button type="submit" placeholder="Search">Search</button>

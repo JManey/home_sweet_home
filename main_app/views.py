@@ -6,11 +6,12 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-import operator
+import operator, uuid, boto3
 from django.db.models import Q
-from .models import Profile, Company, Property
+from .models import Profile, Company, Property, Photo
 
-
+S3_BASE_URL = 'https://s3-us-east-2.amazonaws.com/'
+BUCKET = 'property-photos-hsh'
 
 def is_agent_check(user):
     return user.is_agent
@@ -42,6 +43,7 @@ def signup(request):
 # filterable index
 def properties_index(request):
   qs = Property.objects.all()
+  print('************', qs[2].photo_set.all)
   city = request.GET.get('city')
   state = request.GET.get('state')
   beds = request.GET.get('beds')
@@ -79,7 +81,6 @@ def properties_index(request):
   context = {
       'qs': qs
   }
-  print(context)
   
   return render(request, 'properties/index.html', context)
 
@@ -127,6 +128,20 @@ class PropertyDelete(UserPassesTestMixin, DeleteView):
   success_url = '/properties/'
 
 def CitySearch(request):
-  query = request.GET.get('q')
+  query = request.GET.get('city')
   properties = Property.objects.all().filter(city__icontains=query)
   return render(request, 'properties/index.html', {'properties': properties})
+
+def add_photo(request, property_id):
+  photo_file = request.FILES.get('photo-file', None)
+  if photo_file:
+    s3 = boto3.client('s3')
+    key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
+    try:
+      s3.upload_fileobj(photo_file, BUCKET, key)
+      url = f"{S3_BASE_URL}{BUCKET}/{key}"
+      photo = Photo(url=url, property_id=property_id)
+      photo.save()
+    except:
+      print('An error occurred while uploading to AWS')
+  return redirect('detail', property_id=property_id)

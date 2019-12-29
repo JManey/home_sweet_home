@@ -18,4 +18,6 @@ urlpatterns = [
   path('agents/details/', views.agents_details, name='agents_details'),
   # search for city
   path('city_results/', views.CitySearch, name='city_results'),
+  # add photo url
+  path('properties/<int:property_id>/add_photo/', views.add_photo, name='add_photo'),
   ]

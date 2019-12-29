@@ -31,7 +31,9 @@
         {% for property in qs %}
           <li class="li-card">
             <div class="card">
-              <div class="prop-picture"></div>
+              <div class="prop-picture">
+              <img class="responsive-img card-panel" src="{{property.photo_set.all.2.url}}"
+              </div>
               <div class="card-title">{{property.street_address}}</div>
                 <div class="card-content" id="price">Price: ${{property.price}}</div>
                 <div class="card-content" id="beds">Beds: {{property.beds}} / Baths: {{property.baths}} / Levels: {{property.levels}}</div>
