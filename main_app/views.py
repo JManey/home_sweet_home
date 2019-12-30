@@ -43,7 +43,10 @@ def signup(request):
 # filterable index
 def properties_index(request):
   qs = Property.objects.all()
+<<<<<<< HEAD
   # print('************', qs[2].photo_set.all)
+=======
+>>>>>>> development
   city = request.GET.get('city')
   state = request.GET.get('state')
   beds = request.GET.get('beds')
@@ -76,6 +79,7 @@ def properties_index(request):
   if status != '' and status is not None:
     qs = qs.filter(status=status)
 
+<<<<<<< HEAD
   if city == None:
     city = ''
 
@@ -93,6 +97,15 @@ def properties_index(request):
       'qs': qs,
   }
   
+=======
+
+
+  context = {
+      'qs': qs
+  }
+  print(context)
+
+>>>>>>> development
   return render(request, 'properties/index.html', context)
 
 
@@ -104,6 +117,13 @@ def properties_detail(request, property_id):
   })
 
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> development
 #AGENTS LIST
 def agents_index(request):
   # agents = User.objects.all()
@@ -114,6 +134,13 @@ def agents_details(request, agent_id):
   agent = Profile.objects.get(id=agent_id)
   return render(request, 'agents/agents_details.html', {'agent': agent})
 
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> development
 
 class PropertyCreate(UserPassesTestMixin, CreateView):
   def test_func(self):
