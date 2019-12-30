@@ -8,19 +8,29 @@
 <div class="card">
   <div class="card-content">
         <div class="card-title">{{ property.street_address }} ${{ property.price }}</div>
-        <div class="card-content">{% comment %} <p>Year: {{ property.date_listed }}</p></div>
-        <p>Style: {{ property.levels }}</p>
-        <p>Color: {{ property.beds }}</p>
-          <div class="card-action">
-        {% endcomment %}
+        <div class="card-content">
+        <p>Beds: {{ property.beds }}</p>
+        <p>Baths: {{ property.baths }}</p>
+        <p>Floors: {{ property.levels }}</p>
           <div class="card-action">
             <a class="btn btnColor" href="{% url 'properties_update' property.id %}">Edit</a>
             <a class="btn btnColor" href="{% url 'properties_delete' property.id %}">Delete</a>
           </div>
-            {% comment %} <a href="{% url 'propertiess_delete' property.id %}">Delete</a> {% endcomment %}
-          </div>
-      </div>
+        </div>
+        </div>
+  </div>
 </div>
+
+<div class="card">
+  <div class="card-content">
+    {% for photo in property.photo_set.all %}
+      <img class="responsive-img card-panel" src="{{photo.url}}">
+    {% empty %}
+      <div class="card-panel teal-text center-align">No Photos Yet</div>
+    {% endfor %}
+
+  </div>
+</div> 
 
 
 {% endblock %}
