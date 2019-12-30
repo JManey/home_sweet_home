@@ -38,7 +38,7 @@ class Property(models.Model):
   city = models.CharField(max_length=100)
   state = models.CharField(max_length=100)
   beds = models.IntegerField()
-  baths = models.IntegerField()
+  baths = models.FloatField()
   price = models.IntegerField()
   sqft = models.IntegerField()
   levels = models.IntegerField()
@@ -52,6 +52,12 @@ class Property(models.Model):
   def get_absolute_url(self):
       return reverse("detail", kwargs={"property_id": self.id})
 
+class Photo(models.Model):
+  url = models.CharField(max_length=200)
+  property = models.ForeignKey(Property, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"Photo for property_id: {self.property.id} @{self.url}"
 
 # class User_fav(models.Model):
 #   user = models.ForeignKey(User, on_delete=models.CASCADE)
