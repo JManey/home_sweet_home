@@ -5,16 +5,16 @@
       <h1 id="prop-title">Filter By</h1>
       <hr>
       <form class="test">
-        <input placeholder="City" id="city" name="city" type="text" class="validate">
-        <input placeholder="State" id="state" name="state" type="text" class="validate">
-        <input placeholder="Beds" id="beds" name="beds"  type="number" class="validate">
-        <input placeholder="Baths" id="baths" name="baths" type="number" step=".5" class="validate">
-        <input placeholder="Min Price" id="min_price" name="min_price" type="number" class="validate">
-        <input placeholder="Max Price" id="max_price" name="max_price" type="number" class="validate">
-        <input placeholder="Min Sqft" id="min_sqft" name="min_sqft" type="number" class="validate">
-        <input placeholder="Max Sqft" id="max_sqft" name="max_sqft" type="number" class="validate">
-        <input placeholder="Levels" id="levels" name="levels" type="number" class="validate">
-        <input placeholder="Status" id="status" name="status" type="text" class="validate">
+        <input placeholder="City" id="city" name="city" type="text" class="validate" value="{{ city }}">
+        <input placeholder="State" id="state" name="state" type="text" class="validate" value="{{ State }}">
+        <input placeholder="Beds" id="beds" name="beds"  type="number" class="validate" value="{{ beds }}">
+        <input placeholder="Baths" id="baths" name="baths" type="number" step=".5" class="validate" value="{{ baths }}">
+        <input placeholder="Min Price" id="min_price" name="min_price" type="number" class="validate" value="{{ min_price }}">
+        <input placeholder="Max Price" id="max_price" name="max_price" type="number" class="validate" value="{{ max_price }}">
+        <input placeholder="Min Sqft" id="min_sqft" value="{{ min_sqft }}" name="min_sqft" type="number"  class="validate">
+        <input placeholder="Max Sqft" id="max_sqft" value="{{ max_sqft }}" name="max_sqft" type="number" class="validate">
+        <input placeholder="Levels" id="levels" name="levels" type="number" class="validate" value="{{ levels }}">
+        <input placeholder="Status" id="status" name="status" type="text" class="validate" value="{{ status }}">
 
         <div>  
           <input type="submit" value="Submit" class="btn btnColor c">

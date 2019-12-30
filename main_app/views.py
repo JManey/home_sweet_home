@@ -43,7 +43,7 @@ def signup(request):
 # filterable index
 def properties_index(request):
   qs = Property.objects.all()
-  print('************', qs[2].photo_set.all)
+  # print('************', qs[2].photo_set.all)
   city = request.GET.get('city')
   state = request.GET.get('state')
   beds = request.GET.get('beds')
@@ -76,10 +76,21 @@ def properties_index(request):
   if status != '' and status is not None:
     qs = qs.filter(status=status)
 
-
+  if city == None:
+    city = ''
 
   context = {
-      'qs': qs
+      'city': city,
+      'state': state,
+      'beds': beds,
+      'baths': baths,
+      'min_price': min_price,
+      'max_price': max_price,
+      'min_sqft': min_sqft,
+      'max_sqft': max_sqft,
+      'levels': levels,
+      # 'status': status,
+      'qs': qs,
   }
   
   return render(request, 'properties/index.html', context)
@@ -126,11 +137,6 @@ class PropertyDelete(UserPassesTestMixin, DeleteView):
     return self.request.user.profile.is_agent
   model = Property
   success_url = '/properties/'
-
-def CitySearch(request):
-  query = request.GET.get('city')
-  properties = Property.objects.all().filter(city__icontains=query)
-  return render(request, 'properties/index.html', {'properties': properties})
 
 def add_photo(request, property_id):
   photo_file = request.FILES.get('photo-file', None)

@@ -3,7 +3,7 @@
 {% block content %}
     
     <div class="row center-align">
-        <form action="{% url 'city_results' %}" method="get">
+        <form action="{% url 'index' %}" method="get">
         <label for="prop_search">Search for your future home:</label>
       
         <input type="search" id="prop_search" name="city" value="{{request.GET.q}}" placeholder="Search By City"
