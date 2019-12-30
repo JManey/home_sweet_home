@@ -91,25 +91,16 @@ def properties_detail(request, property_id):
     'property': property
   })
 
-<<<<<<< HEAD
-#below doesn't work on class based
-# @user_passes_test(is_agent_check, login_url='/login/')
-
-=======
 
 #AGENTS LIST
->>>>>>> 70efde34b22e5cde08cab245949f601136970451
 def agents_index(request):
   # agents = User.objects.all()
   agents = Profile.objects.filter(is_agent=True)
   return render(request, 'agents/agents_index.html', {'agents': agents})
-<<<<<<< HEAD
-
-=======
 #AGENT SHOW PAGE
->>>>>>> 70efde34b22e5cde08cab245949f601136970451
-def agents_details(request):
-  return render(request, 'agents/agents_details.html')
+def agents_details(request, agent_id):
+  agent = Profile.objects.get(id=agent_id)
+  return render(request, 'agents/agents_details.html', {'agent': agent})
 
 
 class PropertyCreate(UserPassesTestMixin, CreateView):
