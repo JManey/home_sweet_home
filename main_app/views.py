@@ -92,7 +92,7 @@ def properties_index(request):
       # 'status': status,
       'qs': qs,
   }
-  
+
   return render(request, 'properties/index.html', context)
 
 
@@ -110,8 +110,9 @@ def agents_index(request):
   agents = Profile.objects.filter(is_agent=True)
   return render(request, 'agents/agents_index.html', {'agents': agents})
 #AGENT SHOW PAGE
-def agents_details(request):
-  return render(request, 'agents/agents_details.html')
+def agents_details(request, agent_id):
+  agent = Profile.objects.get(id=agent_id)
+  return render(request, 'agents/agents_details.html', {'agent': agent})
 
 
 class PropertyCreate(UserPassesTestMixin, CreateView):

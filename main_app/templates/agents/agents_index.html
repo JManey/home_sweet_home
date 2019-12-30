@@ -1,14 +1,20 @@
 {% extends 'base.html' %}
+
 {% block content %}
-    <h1>AGENTS:</h1>
-    {% for agent in agents %}
-    <!-- <a href="{% url 'detail' agent.id %}"></a> -->
-        <ul>
-            <hr>
-            <li>Name: <a>{{ agent.user.get_full_name}}</a></li>
-            <li>Admin?: {{ agent.user.is_superuser}}</li>
-            <li>Joined: {{ agent.user.date_joined}}</li>
-        </ul>
-    {% endfor %}
+
+    <h1 id="prop-title">Agents</h1>
     <hr>
+    <div id="card-position">
+      <ul>
+        {% for agent in agents %}
+          <li class="li-card">
+            <div class="card">
+                <div class="prop-picture"></div>
+                <div class="card-title">{{ agent.user.get_full_name}}</div>
+                <a href="{% url 'agents_details' agent.id %}">More about this agent...</a>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
 {% endblock %}
