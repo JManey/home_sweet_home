@@ -57,8 +57,10 @@ def properties_index(request):
 
   if city != '' and city is not None:
     qs = qs.filter(city__icontains=city)
+    city = ''
   if state != '' and state is not None:
     qs = qs.filter(state__icontains=state)
+    state 
   if beds != '' and beds is not None:
     qs = qs.filter(beds__icontains=beds)
   if baths != '' and baths is not None:
