@@ -78,6 +78,8 @@ def properties_index(request):
 
   if city == None:
     city = ''
+  if state == None:
+    state =''
 
   context = {
       'city': city,
