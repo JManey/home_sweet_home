@@ -169,8 +169,11 @@ p, .container{
 #content_property{
   display: flex;
 }
-#id_beds, #id_baths, #id_levels{
+#id_beds, #id_levels{
   width: 30px;
+}
+#id_baths{
+  width: 35px;
 }
 #id_sqft{
   width: 65px;
@@ -199,7 +202,6 @@ div .btnColor{
   margin-top: 80px;
 }
 .li-card .card{
-
   width: 270px;
 }
  #card-position ul {
@@ -221,15 +223,21 @@ div .btnColor{
   padding: 0;
 }
 
-#price{
+#price, #house-status{
   font-size: 1.5rem;
   font-weight: 800;
 }
 
-.prop-picture{
+.prop-picture, .carousel{
   height: 200px;
   width: 270px;
   background-color: green;
+}
+#img-houses{
+  padding: 0;
+  margin: 10px;
+  /* height: 80%;
+  width: 80%; */
 }
 
 main.container{
@@ -252,6 +260,7 @@ main.container{
 #prop-search #max_price, #prop-search #status
 {
   background-color: green;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -276,4 +285,5 @@ main.container{
 .c{
 text-align: center;
 } */
+
 
