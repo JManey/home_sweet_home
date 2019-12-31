@@ -82,13 +82,16 @@ nav, footer{
 
 /* sign in form  */
 /* ************************************** */
-.sign-form{
-  border-radius: 10%;
+.sign-form, #upload-form{
+  border-radius: 10px;
   text-align: center;
   padding-top: 0;
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(110,242,98,0.4836849369085173) 0%, rgba(11,158,19,0.7202779968454258) 100%, rgba(0,212,255,1) 100%);
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+}
+#upload-form{
+  margin: 0;
 }
 
 .sign-in-size{

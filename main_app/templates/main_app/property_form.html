@@ -71,7 +71,7 @@
   </div>
 
   {% if object %}
-    <form action="{% url 'add_photo' property.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+    <form id="upload-form" action="{% url 'add_photo' property.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
       {% csrf_token %}
       <input type="file" name="photo-file">
       <br><br>
