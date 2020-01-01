@@ -29,10 +29,11 @@
                 </ul>
 
                 <ul class="left hide-on-med-and-down">
-                    <li><a href="{% url 'about' %}">About</a></li>
                     <li><a href="{% url 'agents_index' %}">Agents</a></li>
-                    {% if user.is_authenticated %}
+                    {% if user.profile.is_agent %}
                         <li><a href="{% url 'properties_create' %}">Create Property</a></li>
+                    {% endif %}
+                    {% if user.is_authenticated %}
                         <li><a href="{% url 'index' %}">Properties</a></li>
                         <li class=><a href="{% url 'logout' %}">Log Out</a></li>
                     {% else %}
@@ -77,6 +78,11 @@
             document.addEventListener('DOMContentLoaded', function() {
            var elems = document.querySelectorAll('.sidenav');
            var instances = M.Sidenav.init(elems);
+           });
+
+           document.addEventListener('DOMContentLoaded', function() {
+          var elems = document.querySelectorAll('.carousel');
+          var instances = M.Carousel.init(elems);
            });
       </script>
     </body>
