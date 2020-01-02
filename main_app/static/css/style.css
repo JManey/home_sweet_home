@@ -234,13 +234,21 @@ div .btnColor{
 .prop-picture, .carousel{
   height: 200px;
   width: 270px;
+  
   background-color: green;
+  /* background: rgb(2,0,36);
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(19,131,9,0.2665441176470589) 0%, rgba(4,117,10,0.7202779968454258) 100%, rgba(13,207,188,1) 100%, rgba(0,212,255,1) 100%); */
+  
 }
 #img-houses{
   padding: 0;
   margin: 10px;
   /* height: 80%;
   width: 80%; */
+}
+.aws-image{
+  padding: 0;
+  margin-top: 30px;
 }
 
 main.container{
