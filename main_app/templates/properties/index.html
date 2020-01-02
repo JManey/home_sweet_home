@@ -34,7 +34,7 @@
               <div class="prop-picture">
                 <div class="carousel">
                   {% for photo in property.photo_set.all %}
-                    <a class="carousel-item" href="#{{photo.url}}"><img id="img-houses" src="{{photo.url}}"></a>
+                  <a class="carousel-item" href="#{{photo.url}}"><img class="aws-image" id="img-houses{{photo.id}}" src="{{photo.url}}"></a>
                   {% empty %}
                     <div class="card-panel teal-text center-align">No Photos Yet</div>
                   {% endfor %}
