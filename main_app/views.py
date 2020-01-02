@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 import operator, uuid, boto3
 from django.db.models import Q
-from .models import Profile, Company, Property, Photo
+from .models import Profile, Company, Property, Photo, Agent_Photo
 
 S3_BASE_URL = 'https://s3-us-east-2.amazonaws.com/'
 BUCKET = 'catcollector-ga'
@@ -108,12 +108,13 @@ def properties_detail(request, property_id):
 
 #AGENTS LIST
 def agents_index(request):
-  # agents = User.objects.all()
-  agents = Profile.objects.filter(is_agent=True)
+  users = User.objects.all()
+  agents = User.objects.filter(profile__is_agent=True)
   return render(request, 'agents/agents_index.html', {'agents': agents})
+
 #AGENT SHOW PAGE
 def agents_details(request, agent_id):
-  agent = Profile.objects.get(id=agent_id)
+  agent = User.objects.get(id=agent_id)
   return render(request, 'agents/agents_details.html', {'agent': agent})
 
 
@@ -154,3 +155,18 @@ def add_photo(request, property_id):
     except:
       print('An error occurred while uploading to AWS')
   return redirect('detail', property_id=property_id)
+
+def add_photo_user(request, agent_id):
+  user_id = agent_id
+  photo_file = request.FILES.get('photo-file', None)
+  if photo_file:
+    s3 = boto3.client('s3')
+    key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
+    try:
+      s3.upload_fileobj(photo_file, BUCKET, key)
+      url = f"{S3_BASE_URL}{BUCKET}/{key}"
+      photo = Agent_Photo(url=url, user_id=user_id)
+      photo.save()
+    except:
+      print('An error occurred while uploading to AWS')
+  return redirect('agents_details', agent_id=user_id)

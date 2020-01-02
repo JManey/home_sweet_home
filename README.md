@@ -30,3 +30,37 @@
 * Still in your master branch, git add, git commit, git commit.  This will get your github master current with the project master.
 * At this point I would push your development branch to github and then go to github and create a pull request to your github master.  Resolve any conflicts and now you can continue developing.
 
+
+# Home-Sweet-Home
+
+## Introduction
+
+We don't want you to spend hours looking at every 3 bedroom 2 bath house in your area. We want to give you the options you want to narrow your search down to the home you want.Find properties, agents, and more at Home-Sweet-Home!
+
+<!-- ![Example View]() -->
+
+### Deployed Link:
+[Home-Sweet-Home--Deployed-Link]()
+
+## Technologies
+
+- HTML
+- CSS
+- Materialize
+- Python
+- Django
+- Postgres
+- Github
+- Trello
+- Lucid Charts
+
+## Planning
+[Pitch-Powerpoint] (https://docs.google.com/presentation/d/180JjYcUhAP_-SmbumdZI_I5g_1irsdCdole1WPfydo0/edit#slide=id.g7bb1c307cf_0_463)
+
+[Model ERD](https://www.lucidchart.com/documents/edit/1a9b60ca-7426-4a62-8ae2-8f7cfb963f92/0_0?shared=true)
+
+[Trello Board](https://trello.com/b/8IvZxO65/project-3-app)
+
+
+##Ice Box
+- ???

@@ -16,4 +16,5 @@ urlpatterns = [
   path('agents/<int:agent_id>/', views.agents_details, name='agents_details'),
   # add photo url
   path('properties/<int:property_id>/add_photo/', views.add_photo, name='add_photo'),
+  path('users/<int:agent_id>/add_photo_user/', views.add_photo_user, name='add_photo_user'),
   ]

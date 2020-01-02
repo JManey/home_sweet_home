@@ -62,6 +62,14 @@ class Photo(models.Model):
   def __str__(self):
     return f"Photo for property_id: {self.property.id} @{self.url}"
 
+class Agent_Photo(models.Model):
+  url = models.CharField(max_length=200)
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"Photo for agent_id: {self.user.id} @{self.url}"
+
+
 # class User_fav(models.Model):
 #   user = models.ForeignKey(User, on_delete=models.CASCADE)
 #   user_fav = models.ForeignKey(Property, on_delete=models.CASCADE)
