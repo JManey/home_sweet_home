@@ -11,7 +11,7 @@ from django.db.models import Q
 from .models import Profile, Company, Property, Photo
 
 S3_BASE_URL = 'https://s3-us-east-2.amazonaws.com/'
-BUCKET = 'catcollector-bucket'
+BUCKET = 'catcollector-ga'
 
 def is_agent_check(user):
     return user.is_agent
