@@ -20,10 +20,10 @@
           <div class="card-content" id="price">${{ property.price }} </div>
           <div class="card-content" id="beds">Beds: {{ property.beds }} / Baths: {{ property.baths }}</div>
           <div class="card-content" id="beds"> Floors: {{ property.levels }} </div>
-          
+          {% if user.profile.is_agent %} 
           <a class="btn btnColor" href="{% url 'properties_update' property.id %}">Edit</a>
           <a class="btn btnColor" href="{% url 'properties_delete' property.id %}">Delete</a>
-    
+          {% endif %}
       </div>
     </li>
   </ul>
