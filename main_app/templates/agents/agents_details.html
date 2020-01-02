@@ -10,8 +10,8 @@
             <div class="prop-picture">
               <img class="responsive-img card-panel" src="{{agent.agent_photo_set.all.0.url}}">
             </div>
-            <div class="card-title">{{ agent.user.get_full_name}}</div>
-            <div class="card-content" id="price">Joined: {{ agent.user.date_joined}}</div>
+            <div class="card-title">{{ agent.get_full_name}}</div>
+            <div class="card-content" id="price">Joined: {{ agent.date_joined}}</div>
         </div>
         </li>
     </ul>
