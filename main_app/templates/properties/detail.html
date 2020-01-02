@@ -17,9 +17,13 @@
             </div>
           </div>
           <div class="card-title">{{ property.street_address }} </div>
+          <div class="card-content" id="beds">City: {{ property.city }} / State: {{ property.state }}</div>
           <div class="card-content" id="price">${{ property.price }} </div>
-          <div class="card-content" id="beds">Beds: {{ property.beds }} / Baths: {{ property.baths }}</div>
-          <div class="card-content" id="beds"> Floors: {{ property.levels }} </div>
+          <div class="card-content" id="beds">Beds: {{ property.beds }} / Baths: {{ property.baths }} /
+            Levels: {{ property.levels }}</div>
+           Square feet: {{ property.sqft }}
+          <div class="card-content" id="dateListed"> Date Listed {{ property.date_listed }} </div>
+          <div id="house-status">Status: {{property.status}}</div>
           {% if user.profile.is_agent %} 
           <a class="btn btnColor" href="{% url 'properties_update' property.id %}">Edit</a>
           <a class="btn btnColor" href="{% url 'properties_delete' property.id %}">Delete</a>
