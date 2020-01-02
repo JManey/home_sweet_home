@@ -30,11 +30,12 @@
 
                 <ul class="left hide-on-med-and-down">
                     <li><a href="{% url 'agents_index' %}">Agents</a></li>
+                    <li><a href="{% url 'index' %}">Properties</a></li>
                     {% if user.profile.is_agent %}
                         <li><a href="{% url 'properties_create' %}">Create Property</a></li>
                     {% endif %}
                     {% if user.is_authenticated %}
-                        <li><a href="{% url 'index' %}">Properties</a></li>
+                        
                         <li class=><a href="{% url 'logout' %}">Log Out</a></li>
                     {% else %}
                         <li><a href="{% url 'signup' %}">Sign UP</a></li>
@@ -47,7 +48,8 @@
           <ul class="sidenav" id="mobile-demo">
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'agents_index' %}">Agents</a></li>
-            {% if user.is_authenticated %}
+            <li><a href="{% url 'index' %}">Properties</a></li>
+            {% if user.is_agent %}
             <li><a href="{% url 'properties_create' %}">Create Property</a></li>
             <li><a href="{% url 'index' %}">Properties</a></li>
             <li><a href="{% url 'logout' %}">Log Out</a></li>
