@@ -2,37 +2,34 @@
 {% block content %}
 
 <h1>Property Details</h1>
-
 <hr>
-
-<div class="card">
-  <div class="card-content">
-        <div class="card-title">{{ property.street_address }} ${{ property.price }}</div>
-        <div class="card-content">
-        <p>Beds: {{ property.beds }}</p>
-        <p>Baths: {{ property.baths }}</p>
-        <p>Floors: {{ property.levels }}</p>
-        {% if user.profile.is_agent %}
-          <div class="card-action">
-            <a class="btn btnColor" href="{% url 'properties_update' property.id %}">Edit</a>
-            <a class="btn btnColor" href="{% url 'properties_delete' property.id %}">Delete</a>
+<div id="card-position">
+  <ul>
+    <li class="li-card">
+      <div class="card">
+          <div class="prop-picture">
+            <div class="carousel">
+              {% for photo in property.photo_set.all %}
+                <a class="carousel-item" href="#{{photo.url}}"><img id="img-houses" src="{{photo.url}}"></a>
+              {% empty %}
+                <div class="card-panel teal-text center-align">No Photos Yet</div>
+              {% endfor %}
+            </div>
           </div>
-        {% endif %}
-        </div>
-        </div>
-  </div>
-</div>
+          <div class="card-title">{{ property.street_address }} </div>
+          <div class="card-content" id="price">${{ property.price }} </div>
+          <div class="card-content" id="beds">Beds: {{ property.beds }} / Baths: {{ property.baths }}</div>
+          <div class="card-content" id="beds"> Floors: {{ property.levels }} </div>
+          
+          <a class="btn btnColor" href="{% url 'properties_update' property.id %}">Edit</a>
+          <a class="btn btnColor" href="{% url 'properties_delete' property.id %}">Delete</a>
+    
+      </div>
+    </li>
+  </ul>
 
-<div class="card">
-  <div class="card-content">
-    {% for photo in property.photo_set.all %}
-      <img class="responsive-img card-panel" src="{{photo.url}}">
-    {% empty %}
-      <div class="card-panel teal-text center-align">No Photos Yet</div>
-    {% endfor %}
-
-  </div>
 </div> 
+
 
 
 {% endblock %}
