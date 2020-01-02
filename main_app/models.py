@@ -15,7 +15,7 @@ class Profile(models.Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE)
   is_agent = models.BooleanField(default=False)
   def __str__(self):
-    return f"{self.agent}"
+    return f"{self.is_agent}"
   def get_absolute_url(self):
       return reverse("agent_detail", kwargs={"agent_id": self.id})
 
