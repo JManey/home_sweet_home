@@ -90,6 +90,7 @@ nav, footer{
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(110,242,98,0.4836849369085173) 0%, rgba(11,158,19,0.7202779968454258) 100%, rgba(0,212,255,1) 100%);
   margin-bottom: 50px;
 }
+
 #upload-form{
   margin: 0;
 }
@@ -126,8 +127,9 @@ h1{
 }
 
 label{
-  color: green;
+  color: darkgreen;
   font-size: 1.5rem;
+  /* color: white; */
 }
 
 p, .container{
@@ -136,6 +138,7 @@ p, .container{
 }
 
 .btnColor{
+  border-radius: 10px;
   background-color: green;
 }
 
@@ -201,6 +204,9 @@ div .btnColor{
 }
 
 /* Properties */
+#p-details{
+  margin-top: 50px;
+}
 #prop-title{
   margin-top: 80px;
 }
@@ -245,8 +251,12 @@ div .btnColor{
 .aws-image{
   padding: 0;
   margin-top: 30px;
+  border-radius: 10px;
 }
-
+.aws-agent-image{
+  width: 100%;
+  height: 100%;
+}
 main.container{
   margin: 0 auto;
   width: 80%;
@@ -269,15 +279,18 @@ main.container{
   background-color: green;
   font-size: 1rem;
   text-align: center;
+  border-radius: 10px;
 }
 
 #prop-search #beds, #prop-search #baths, #prop-search #levels{
   width: 55px;
-
 }
-#prop-search #min_sqft, #prop-search #max_sqft{
+#prop-search #min_sqft{
   width: 70px;
   /* background-color: green; */
+}
+#prop-search #max_sqft{
+  width: 73px;
 }
 #prop-search #city, #prop-search #state, #prop-search #min_price,
 #prop-search #max_price, #prop-search #status{

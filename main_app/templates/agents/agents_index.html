@@ -1,21 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<!-- devolverme hasta aca -->
     <h1 id="prop-title">Agents</h1>
     <hr>
     <div id="card-position">
       <ul>
         {% for agent in agents %}
-          <div class="li-card">
-            <div class="card">
-              <div class="prop-picture">
-                <!-- <div class="carousel"> -->
-                  <img class="responsive-img card-panel" src="{{agent.agent_photo_set.all.0.url}}">
-                </div>
-                <div class="card-title">{{ agent.get_full_name}}</div>
-                <a href="{% url 'agents_details' agent.id %}">More about this agent...</a>
-            <!-- </div> -->
+        <li class="li-card">
+          <div class="card">
+            <div class="prop-picture">
+              <div class="carousel">
+                  <img class="aws-agent-image" src="{{agent.agent_photo_set.all.0.url}}">
+              </div>
+            </div>
+            <div class="card-title">{{ agent.get_full_name}}</div>
+            
+            <a href="{% url 'agents_details' agent.id %}">More about this agent...</a>
             </div>
           </li>
         {% endfor %}

@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Property Details</h1>
-<hr>
+  <h1 id="p-details">Property Details</h1>
+  <hr>
+
 <div id="card-position">
   <ul>
     <li class="li-card">
@@ -20,15 +21,15 @@
           <div class="card-content" id="beds">City: {{ property.city }} / State: {{ property.state }}</div>
           <div class="card-content" id="price">${{ property.price }} </div>
           <div class="card-content" id="beds">Beds: {{ property.beds }} / Baths: {{ property.baths }} /
-            Levels: {{ property.levels }}</div>
-           Square feet: {{ property.sqft }}
-          <div class="card-content" id="dateListed"> Date Listed {{ property.date_listed }} </div>
+           Levels: {{ property.levels }}</div>
+           <div> Square feet: {{ property.sqft }}</div>
+          <div> Date Listed {{ property.date_listed }} </div>
           <div id="house-status">Status: {{property.status}}</div>
           {% if user.profile.is_agent %} 
           <a class="btn btnColor" href="{% url 'properties_update' property.id %}">Edit</a>
           <a class="btn btnColor" href="{% url 'properties_delete' property.id %}">Delete</a>
           {% endif %}
-      </div>
+      <div>
     </li>
   </ul>
 
