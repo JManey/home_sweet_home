@@ -6,13 +6,13 @@
 <div id="card-position">
     <ul>
         <li class="li-card">
-        <div class="card">
-            <div class="prop-picture">
-              <img class="responsive-img card-panel" src="{{agent.agent_photo_set.all.0.url}}">
-            </div>
+          <div class="card">
+              <div class="prop-picture">
+                <img class="aws-agent-image" src="{{agent.agent_photo_set.all.0.url}}">
+              </div>
             <div class="card-title">{{ agent.get_full_name}}</div>
             <div class="card-content" id="price">Joined: {{ agent.date_joined}}</div>
-        </div>
+          </div>
         </li>
     </ul>
     {% comment %} {% if object %} {% endcomment %}
