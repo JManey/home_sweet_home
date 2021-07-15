@@ -40,6 +40,7 @@ We don't want you to spend hours looking at every 3 bedroom 2 bath house in your
 <!-- ![Example View]() -->
 
 ### Deployed Link:
+https://home-sweet-home-ga.herokuapp.com/
 [Home-Sweet-Home--Deployed-Link]()
 
 ## Technologies
